@@ -14,6 +14,9 @@ formSubmit.addEventListener("submit", function validateBillAndCashAmount(e) {
     e.preventDefault()
     hideMessage();
 
+    if (billAmount.value === cashGiven.value) {
+        showMessage("No change to be returned");
+    }
     if (billAmount.value > 0) {
         if (Number(cashGiven.value) >= Number(billAmount.value)) {
 
